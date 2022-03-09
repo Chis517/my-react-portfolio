@@ -60,6 +60,7 @@ function Contact() {
         <button data-testid="button" type="submit">Submit</button>
       </form>
     </section>
+    
   );
 }
 

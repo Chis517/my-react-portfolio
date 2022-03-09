@@ -1,0 +1,360 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root { 
+  --primary-color: #ffffff;
+  --secondary-color: #FF0000;
+  --third-color: #000000;
+  --tertiary-color: #606060;
+  --background-color: #C0C0C0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* HEADER / NAV BAR STYLES START */
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--tertiary-color);
+  background-attachment: fixed;
+  background-position: 80%;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: normal;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+header nav {
+  margin: 12px 0;
+}
+
+@media (min-height: 300px) {
+  header nav ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
+
+header nav ul li a {
+  padding: 5px 10px;
+  font-weight: lighter;
+  font-size: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  text-shadow: none;
+}
+/* HEADER / NAVBAR STYLES END */
+
+/* STYLE ALL SECTION TAGS */
+section {
+  padding: 60px;
+}
+
+/* HERO STYLES START */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  background-image: url("../images/header.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  /* I wanted to give the background-image some colored opacity and used the following source */
+  /* <BevansDesign> (2014) <Semi-transparent color layer over background-image> [Source code] "https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image" */
+  box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, .35);
+}
+
+.hero h2 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: right;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* HERO STYLES END */
+
+/* SECTION TITLE STYLES START */
+.section-title {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 3px solid;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: left;
+}
+  
+.primary-border {
+  border-color: var(--tertiary-color);
+}
+  
+.secondary-border {
+  border-color: var(--secondary-color);
+}
+/* SECTION TITLE STYLES END */
+
+/* ABOUT SECTION STYLES START */
+.about {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.70);
+  color: var(--primary-color);
+}
+
+.about-img {
+  flex: 1 30%;
+}
+
+.about-img img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+  display: flex;
+  flex: 2 70%;
+  flex-wrap: wrap;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-text h2 {
+  margin: 15px 0 15px 20px;
+  flex: 2 70%;
+}
+
+.about-text p {
+  margin-left: 20px;
+  font-size: 14px;
+}
+/* ABOUT SECTION STYLES END */
+
+/* PROJECTS SECTION STYLES START */   /* NEED TO FIX OVERLAY */
+.projects {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 8px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--secondary-color);
+  box-shadow: 0 0 100px rgba(255, 0, 0, 0.70);
+  color: var(--primary-color);
+}
+
+.projects h2 {
+  margin-bottom: 20px;
+  flex: 2 70%;
+  color: var(--primary-color);
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.featured {
+  display: block;
+  width: 100%;
+}
+
+.featured-project {
+  position: relative;
+}
+
+.featured-project:hover .overlay {
+  width: 100%;
+}
+
+.other-projects {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.other {
+  position: relative;
+  flex-direction: row;
+}
+
+.other-img {
+  display: block;
+  width: 400px;
+  height: 600px;
+  object-fit: scale-down;
+}
+  
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.other:hover .overlay {
+  position: absolute;
+  width: 100%;
+}
+  
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* PROJECTS SECTION STYLES END */
+
+/* CONTACT SECTION STYLES START */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact h2 {
+  margin: 15px 0 15px 0;
+  color: var(--third-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.icons {
+  margin: 25px 0 0 25px;
+}
+
+.icons ul {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.icons ul li a {
+  padding-right: 20px;
+}
+
+.icons ul li a:hover {
+  opacity: 0.7;
+}
+/* CONTACT SECTION STYLES END */
+
+
+/* UTILITIES */
+.flex-row {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+/* @media screen and (max-width: 980px) { 
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: fixed;
+  }
+  
+  header h1 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  header nav ul {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  header nav ul li a {
+    font-size: 20px;
+  }
+
+  .hero h2 {
+    margin-top: 90px;
+    justify-content: center;
+    position: relative;
+    font-size: 80px;
+  }
+  
+  .section-title {
+    width: 80%;
+    justify-content: center;
+    position: relative;
+  }
+    
+  .about {
+    display: flex;
+  }
+
+  .about-img {
+    flex-direction: column;
+  }
+
+  .about h2 {
+    text-align: center;
+  }
+    
+} */
